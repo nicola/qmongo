@@ -14,19 +14,17 @@
 
 var Q = require("q");
 
-module.exports = {
-  save: function(obj) {
+var _op = function(key) {
+  return function(obj) {
     var deferred = Q.defer();
-    obj.save(function(err) {
+    obj[key](function(err) {
       !err ? deferred.resolve(obj) : deferred.reject(obj);
-    });
-    return deferred.promise;
-  },
-  exec: function(query) {
-    var deferred = Q.defer();
-    query.exec(function(err, doc) {
-      !err ? deferred.resolve(obj) : deferred.reject(obj);
-    });
+    })
     return deferred.promise;
   }
+}
+
+module.exports = {
+  save: _op('save'),
+  exec: _op('exec'),
 };
