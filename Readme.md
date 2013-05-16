@@ -1,6 +1,6 @@
-# qm
+# qmongo
 
-Simple helper to use Q promises with Mongoose.
+Simple helper to use Q promises with Mongoose (and NodeJS).
 It makes very simple to chain and combine promises (especially with Q.when)
 
 ## Installation
