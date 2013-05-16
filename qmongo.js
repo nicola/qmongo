@@ -19,7 +19,7 @@ var _op = function(key) {
     var deferred = Q.defer();
     obj[key](function(err) {
       !err ? deferred.resolve(obj) : deferred.reject(obj);
-    })
+    });
     return deferred.promise;
   }
 }
