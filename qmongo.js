@@ -17,23 +17,15 @@ var Q = require("q");
 module.exports = {
   save: function(obj) {
     var deferred = Q.defer();
-     obj.save(function(err) {
-       if (!err) {
-         deferred.resolve (obj);
-       } else {
-         deferred.reject (err);
-       }
-     });
-     return deferred.promise;
+    obj.save(function(err) {
+      !err ? deferred.resolve(obj) : deferred.reject(obj);
+    });
+    return deferred.promise;
   },
   exec: function(query) {
     var deferred = Q.defer();
     query.exec(function(err, doc) {
-      if (!err) {
-        deferred.resolve (doc);
-      } else {
-        deferred.reject (err);
-      }
+      !err ? deferred.resolve(obj) : deferred.reject(obj);
     });
     return deferred.promise;
   }
