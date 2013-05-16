@@ -7,22 +7,22 @@ It makes very simple to chain and combine promises (especially with Q.when)
 
 Server side
 
-    $ npm install qm
+    $ npm install qmongo
 
 
 ## Usage
 
 ```js
 
-var qm = require('qm');
+var qmongo = require('qmongo');
 var mongoose = require('mongoose');
 
 [...]
 
 var newUser = new User();
 Q.when(
-  qm.exec(User.find({city: "Rome"}).limit(5)),
-  qm.save(newUser)
+  qmongo.exec(User.find({city: "Rome"}).limit(5)),
+  qmongo.save(newUser)
 ).then(function(args) {
   console.log(args);
 });

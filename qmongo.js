@@ -1,11 +1,11 @@
 /**
- * Use qm to use Q promises with Mongoose and use features not included such as Q.when, Q.fcall..
+ * Use qmongo to use Q promises with Mongoose and use features not included such as Q.when, Q.fcall..
  *
  *    var newUser = new User();
  *
  *    Q.when(
- *      qm.exec(User.find({city: "Rome"}).limit(5)),
- *      qm.save(newUser)
+ *      qmongo.exec(User.find({city: "Rome"}).limit(5)),
+ *      qmongo.save(newUser)
  *    ).then(function(args) {
  *      console.log(args);
  *    });
