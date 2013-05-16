@@ -18,7 +18,7 @@ var _op = function(key) {
   return function(obj) {
     var deferred = Q.defer();
     obj[key](function(err) {
-      !err ? deferred.resolve(obj) : deferred.reject(obj);
+      !err ? deferred.resolve(obj) : deferred.reject(err);
     });
     return deferred.promise;
   }
